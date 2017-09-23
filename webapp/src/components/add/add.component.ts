@@ -9,7 +9,7 @@ import { EmployeeService } from '../../providers/employee.service';
   styleUrls: ['./add.component.sass']
 })
 export class AddComponent implements OnInit {
-  
+
   constructor(public dialogRef: MdDialogRef<AddComponent>,
     @Inject(MD_DIALOG_DATA) public data: any, public employeeService: EmployeeService) { }
 
@@ -20,7 +20,7 @@ export class AddComponent implements OnInit {
   }
 
   save(data) {
-    this.employeeService.create(data.firstName, data.lastName, 
+    this.employeeService.create(data.id, data.firstName, data.lastName, 
       data.gender.toLowerCase(), data.emailAddress)
       .subscribe(
         data => {

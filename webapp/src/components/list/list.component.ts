@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MdDialog } from '@angular/material';
 
 import { EmployeeService } from '../../providers/employee.service';
 import { SearchService } from '../../providers/search.service';
+import { AddComponent } from "../add/add.component";
 
 @Component({
   selector: 'app-list',
@@ -12,12 +14,11 @@ export class ListComponent implements OnInit {
   value:string="Watch";
   employees: any[];
   search: any[];
-  isLoad: boolean = false;
 
-  constructor(public employeeService: EmployeeService, public searchService: SearchService) {
+  constructor(public employeeService: EmployeeService, public searchService: SearchService, public dialog: MdDialog) {
     employeeService.employeeUpdatedEvent.subscribe(
       (employees) => {
-        this.employees = employees
+        this.employees = this.addImages(employees);
       }
     );
   }
@@ -32,10 +33,7 @@ export class ListComponent implements OnInit {
         data => {
           this.employees = this.addImages(data);
         },
-        err => this.employees = err,
-        () => {
-          this.isLoad = true;
-        }
+        err => this.employees = err, () => { }
       );
   }
 
@@ -44,9 +42,7 @@ export class ListComponent implements OnInit {
       .subscribe(
         data => {
           this.employees = this.addImages(data);
-        }, err => this.employees = err, () => {
-          this.isLoad = true;
-        }
+        }, err => this.employees = err, () => { }
       );
   }
 
@@ -64,6 +60,23 @@ export class ListComponent implements OnInit {
     } else {
       this.getEmployees();
     }
+  }
+
+  updateTitle: string = "Update Employee";
+  updateSubtitle: string = "Kindly update the employee details";
+
+  openUpdateDialog(id): void {
+    this.searchService.searchById(id)
+      .subscribe(
+        data => {
+          let dialogRef = this.dialog.open(AddComponent, {
+            height: '80%',
+            width: '60%',
+            data: { title: this.updateTitle, subtitle: this.updateSubtitle, employee: data[0] }
+          });
+          dialogRef.afterClosed().subscribe(result => { });
+        }, err => this.employees = err, () => { }
+      );
   }
 
 }

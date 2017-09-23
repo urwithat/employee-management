@@ -2,15 +2,17 @@
 <md-list>
   <!-- <md-divider></md-divider> -->
   <md-list-item *ngFor="let employee of employees">
-      <md-icon md-list-icon *ngIf="employee.gender == 'female'">face</md-icon>
-      <md-icon md-list-icon *ngIf="employee.gender == 'male'">tag_faces</md-icon>
+      <!-- <md-icon md-list-icon *ngIf="employee.gender == 'female'">face</md-icon>
+      <md-icon md-list-icon *ngIf="employee.gender == 'male'">tag_faces</md-icon> -->
+      <img md-card-avatar *ngIf="employee.gender == 'female'" src="../../assets/images/female.png">
+      <img md-card-avatar *ngIf="employee.gender == 'male'" src="../../assets/images/male.png">
     <h4 md-line>{{employee.firstName}} {{employee.lastName}}</h4>
     <p md-line>{{employee.emailAddress}}</p>
     <md-card-actions>
         <button md-button><md-icon>thumb_up</md-icon></button>
         <button md-button><md-icon>share</md-icon></button>
         <button md-button><md-icon>mode_comment</md-icon></button>
-        <button md-button><md-icon>mode_edit</md-icon></button>
+        <button md-button (click)="openUpdateDialog(employee.id)"><md-icon>mode_edit</md-icon></button>
         <button md-button><md-icon>delete</md-icon></button>
         <button md-button><md-icon>star</md-icon><md-icon>star</md-icon><md-icon>star</md-icon><md-icon>star_half</md-icon><md-icon>star_border</md-icon></button>
       </md-card-actions>

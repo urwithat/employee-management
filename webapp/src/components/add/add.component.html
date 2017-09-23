@@ -4,21 +4,22 @@
     {{data.subtitle}}
     <p>
       <md-form-field class="full-width">
-        <input name="firstName" mdInput ngModel required placeholder="First name">
+        <input name="firstName" mdInput [(ngModel)]="data.employee.firstName" required placeholder="First name">
       </md-form-field>
       <md-form-field class="full-width">
-          <input name="lastName" mdInput ngModel required placeholder="Last name">
+          <input name="lastName" mdInput [(ngModel)]="data.employee.lastName"  required placeholder="Last name">
       </md-form-field>
     </p>
     <p>
       <md-form-field class="full-width">
-        <input name="emailAddress" mdInput ngModel required email placeholder="Email Address">
+        <input name="emailAddress" mdInput [(ngModel)]="data.employee.emailAddress"  required email placeholder="Email Address">
       </md-form-field>
-      <md-radio-group name="gender" required selected ngModel class="radio-group">
+      <md-radio-group name="gender" required selected [(ngModel)]="data.employee.gender" class="radio-group">
         <md-radio-button value="male" name="genderMale">Male</md-radio-button>
         <md-radio-button value="female" name="genderFemale">Female</md-radio-button>
       </md-radio-group>
     </p>
+    <input name="id" type="hidden"[(ngModel)]="data.employee.id">
   </div>
   <div md-dialog-actions>
     <button md-button [disabled]="!addForm.form.valid" tabindex="2">Save</button>

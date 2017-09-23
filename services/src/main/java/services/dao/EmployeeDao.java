@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.repository.Query;
 public interface EmployeeDao extends MongoRepository<Employee, String> {
 
 	public Employee findById(String id);
-	
+
 	@Query("{$and :["
 			+ "?#{[0] == null ? { $where : 'true'} : { 'id' : { $regex: [0], $options: 'i' } } }, "
 			+ "?#{[1] == null ? { $where : 'true'} : { 'firstName' : { $regex: [1], $options: 'i' } } }, "

@@ -10,9 +10,9 @@ export class EmployeeService {
   constructor(public http: Http) {
   }
 
-  create(firstName, lastName, gender, emailAddress) {
+  create(id, firstName, lastName, gender, emailAddress) {
     let data = {
-      "id": this.guid,
+      "id": (id ? id : this.id()),
       "firstName": firstName,
       "lastName": lastName,
       "gender": gender,
@@ -37,13 +37,7 @@ export class EmployeeService {
       .map(response => response.json())
   }
 
-  guid() {
-    function s4() {
-      return Math.floor((1 + Math.random()) * 0x10000)
-        .toString(16)
-        .substring(1);
-    }
-    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-      s4() + '-' + s4() + s4() + s4();
+  id() {
+    return Math.random() * (999999 - 111111) + 111111;
   }
 }

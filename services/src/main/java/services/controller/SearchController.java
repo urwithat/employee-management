@@ -36,6 +36,18 @@ public class SearchController {
 		}
 	}
 	
+	@RequestMapping(value = "/search/id/{id}", method = RequestMethod.GET)
+	public String readById(@PathVariable("id") String id) {
+		Employee employees = DB.getEmployeeDao().findById(id);
+		ObjectMapper objectMapper = new ObjectMapper();
+		try {
+			return objectMapper.writeValueAsString(employees);
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+			return Helper.EMP_ERROR.value();
+		}
+	}
+	
 	@RequestMapping(value = "/search/term/{term}", method = RequestMethod.GET)
 	public String readAll(@PathVariable("term") String term) {
 		//DB.getEmployeeDao().

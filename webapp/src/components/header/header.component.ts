@@ -10,11 +10,11 @@ import { AddComponent } from "../add/add.component";
   styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
-  uploadTitle: string = "Upload";
+  uploadTitle: string = "Upload Employee";
   uploadSubtitle: string = "Kindly select the employee xlsx file for adding or editing employees";
 
   addTitle: string = "New Employee";
-  addSubtitle: string = "Kindly enter the details";
+  addSubtitle: string = "Kindly enter the employee details";
 
   constructor(public dialog: MdDialog) {}
 
@@ -27,7 +27,6 @@ export class HeaderComponent implements OnInit {
       width: '60%',
       data: { title: this.uploadTitle, subtitle: this.uploadSubtitle }
     });
-
     dialogRef.afterClosed().subscribe();
   }
 
@@ -35,9 +34,9 @@ export class HeaderComponent implements OnInit {
     let dialogRef = this.dialog.open(AddComponent, {
       height: '80%',
       width: '60%',
-      data: { title: this.addTitle, subtitle: this.addSubtitle }
+      data: { title: this.addTitle, subtitle: this.addSubtitle, 
+        employee: { id: "", firstName: "", lastName: "", emailAddress: "", gender: "" } }
     });
-
     dialogRef.afterClosed().subscribe(result => { });
   }
 

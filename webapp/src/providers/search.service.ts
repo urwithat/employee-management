@@ -11,6 +11,11 @@ export class SearchService {
       .map(response => response.json())
   }
 
+  searchById(term) {
+    return this.http.get("/api/search?id=" + term)
+      .map(response => response.json())
+  }
+
   searchByTerm(term) {
     return this.http.get("/api/search/term/" + term)
       .map(response => response.json())
