@@ -18,6 +18,7 @@ import { ListComponent } from '../components/list/list.component';
 import { SearchComponent } from '../components/search/search.component';
 import { UploadComponent } from '../components/upload/upload.component';
 import { InputFileComponent } from '../components/input-file/input-file.component';
+import { AddComponent } from '../components/add/add.component';
 
 import { EmployeeService } from '../providers/employee.service';
 import { ExcelService } from '../providers/excel.service';
@@ -31,7 +32,8 @@ import { SearchService } from '../providers/search.service';
     SearchComponent,
     HeaderComponent,
     UploadComponent,
-    InputFileComponent
+    InputFileComponent,
+    AddComponent
   ], exports: [
     MdButtonModule,
     MdCardModule,
@@ -54,7 +56,8 @@ import { SearchService } from '../providers/search.service';
     ExcelService,
     SearchService
   ], entryComponents: [
-    UploadComponent
+    UploadComponent,
+    AddComponent
   ],
   bootstrap: [AppComponent]
 })

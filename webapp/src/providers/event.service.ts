@@ -8,7 +8,6 @@ export class EmployeeService {
   }
 
   create() {
-    //console.log('env variables', this.envVariables);
     return this.http.get("/api/employees/create")
       .map(response => response.json())
   }

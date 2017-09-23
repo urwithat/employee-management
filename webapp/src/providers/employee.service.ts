@@ -10,8 +10,15 @@ export class EmployeeService {
   constructor(public http: Http) {
   }
 
-  create() {
-    return this.http.get("/api/employees/create")
+  create(firstName, lastName, gender, emailAddress) {
+    let data = {
+      "id": this.guid,
+      "firstName": firstName,
+      "lastName": lastName,
+      "gender": gender,
+      "emailAddress": emailAddress
+    }
+    return this.http.post("/api/employees/create", data)
       .map(response => response.json())
   }
 
@@ -28,5 +35,15 @@ export class EmployeeService {
   delete() {
     return this.http.get("/employees/delete/{id}")
       .map(response => response.json())
+  }
+
+  guid() {
+    function s4() {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+      s4() + '-' + s4() + s4() + s4();
   }
 }

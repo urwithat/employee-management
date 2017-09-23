@@ -2,6 +2,8 @@ package services.controller;
 
 
 import java.io.IOException;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,23 +22,23 @@ import services.model.Employee;
 public class EmployeeController {
 	
 	@RequestMapping(value = "/employees/create", method = RequestMethod.POST)
-	public String create(@RequestBody String payload) {
+	public List<Employee> create(@RequestBody String payload) {
 		if(payload != null) {
 			if(payload.trim().length() != 0) {
 				ObjectMapper objectMapper = new ObjectMapper();
 				try {
 					Employee employee = objectMapper.readValue(payload, Employee.class);
 					DB.getEmployeeDao().save(employee);
-					return Helper.EMP_SUCCESS_ADD.value();
+					return DB.getEmployeeDao().findAll();
 				} catch (IOException e) {
 					e.printStackTrace();
-					return Helper.EMP_ERROR.value();
+					return DB.getEmployeeDao().findAll();
 				}
 			} else {
-				return Helper.EMP_ERROR_PARAMETERS.value();
+				return DB.getEmployeeDao().findAll();
 			}
 		} else {
-			return Helper.EMP_ERROR_PARAMETERS.value();
+			return DB.getEmployeeDao().findAll();
 		}
 	}
 	

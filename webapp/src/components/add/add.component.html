@@ -1,0 +1,25 @@
+<h1 md-dialog-title>{{data.title}}</h1>
+<div md-dialog-content>
+    {{data.subtitle}}
+    <p>
+      <md-form-field class="full-width">
+        <input mdInput placeholder="First" [(ngModel)]="firstName">
+      </md-form-field>
+      <md-form-field class="full-width">
+          <input mdInput placeholder="Last name" [(ngModel)]="lastName">
+      </md-form-field>
+    </p>
+    <p>
+      <md-form-field class="full-width">
+        <input mdInput placeholder="Email Address" [(ngModel)]="emailAddress">
+      </md-form-field>
+      <md-radio-group class="radio-group" [(ngModel)]="gender">
+        <md-radio-button class="radio-button" *ngFor="let gender of genders" [value]="gender">
+          {{gender}}
+        </md-radio-button>
+      </md-radio-group>
+    </p>
+</div>
+<div md-dialog-actions>
+  <button md-button (click)="save()" tabindex="2">Save</button>
+</div>

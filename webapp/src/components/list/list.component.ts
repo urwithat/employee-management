@@ -17,7 +17,6 @@ export class ListComponent implements OnInit {
   constructor(public employeeService: EmployeeService, public searchService: SearchService) {
     employeeService.employeeUpdatedEvent.subscribe(
       (employees) => {
-        console.log("????????????? Data Modified in List");
         this.employees = employees
       }
     );

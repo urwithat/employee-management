@@ -31,12 +31,10 @@ export class UploadComponent implements OnInit {
     this.uploadRef = this.excelService.uploadfile('/api/upload', [], this.fileList)
       .subscribe(
         data => {
-          console.log("????????????? Upload Trigger");
           this.employeeService.employeeUpdatedEvent.emit(data);
           this.onNoClick();
         },
         progress => {
-          console.log("????????????? Upload Close");
           this.onNoClick();
         }
       )

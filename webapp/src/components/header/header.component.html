@@ -11,6 +11,11 @@
         <md-icon>view_comfy</md-icon>
       </span>
     </button>
+    <button md-button aria-label="Upload" (click)="openAddDialog()">
+      <span class="nav-link">
+        <md-icon>add</md-icon>
+      </span>
+    </button>
     <button md-button aria-label="Download">
       <span class="nav-link">
         <a target="_self" href="/api/download" download="employees.xlsx">
@@ -18,21 +23,11 @@
         </a>
       </span>
     </button>
-
-
-    <!-- <button md-button aria-label="Upload">
-      <span class="nav-link" [routerLink]="['upload']">
-        <md-icon>file_upload</md-icon>
-      </span>
-    </button> -->
-
-    <button md-button aria-label="Upload" (click)="openDialog()">
+    <button md-button aria-label="Upload" (click)="openUploadDialog()">
       <span class="nav-link">
         <md-icon>file_upload</md-icon>
       </span>
     </button>
-
-
     <button md-button aria-label="Account" [mdMenuTriggerFor]="appMenu">
       <md-icon>account_circle</md-icon>
     </button>
