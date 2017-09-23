@@ -79,4 +79,14 @@ export class ListComponent implements OnInit {
       );
   }
 
+  deleteEmployee(id): void {
+    this.employeeService.delete(id)
+    .subscribe(
+      data => {
+        this.employees = this.addImages(data);
+      },
+      err => this.employees = err, () => { }
+    );
+  }
+
 }
