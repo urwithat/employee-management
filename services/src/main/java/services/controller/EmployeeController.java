@@ -84,21 +84,21 @@ public class EmployeeController {
 	}
 	
 	@RequestMapping(value = "/employees/delete/{id}", method = RequestMethod.GET)
-	public String delete(@PathVariable("id") String id) {
+	public List<Employee> delete(@PathVariable("id") String id) {
 		if(id != null) {
 			if(id.trim().length() != 0) {
-				Employee employee = DB.getEmployeeDao().findById(id);
-				if(employee != null) {
-					DB.getEmployeeDao().delete(employee);
-					return Helper.EMP_SUCCESS_DELETE.value();
+				List<Employee> employees = DB.getEmployeeDao().findByAny(id, null, null, null, null);
+				if(employees != null) {
+					DB.getEmployeeDao().delete(employees.get(0));
+					return DB.getEmployeeDao().findAll();
 				} else {
-					return Helper.EMP_ERROR_NO_DATA.value();
+					return DB.getEmployeeDao().findAll();
 				}
 			} else {
-				return Helper.EMP_ERROR_PARAMETERS.value();
+				return DB.getEmployeeDao().findAll();
 			}
 		} else {
-			return Helper.EMP_ERROR_PARAMETERS.value();
+			return DB.getEmployeeDao().findAll();
 		}
 	}
 	

@@ -21,12 +21,8 @@
         <img md-card-image src="{{employee.imagePath}}">
         <md-card-content></md-card-content>
         <md-card-actions>
-          <button md-button><md-icon>thumb_up</md-icon></button>
-          <button md-button><md-icon>share</md-icon></button>
-          <button md-button><md-icon>mode_comment</md-icon></button>
           <button md-button (click)="openUpdateDialog(employee.id)"><md-icon>mode_edit</md-icon></button>
-          <button md-button><md-icon>delete</md-icon></button>
-          <button md-button><md-icon>star</md-icon><md-icon>star</md-icon><md-icon>star</md-icon><md-icon>star_half</md-icon><md-icon>star_border</md-icon></button>
+          <button md-button (click)="deleteEmployee(employee.id)"><md-icon>delete</md-icon></button>
         </md-card-actions>
       </md-card>
     </div>

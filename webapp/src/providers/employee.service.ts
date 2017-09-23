@@ -32,8 +32,8 @@ export class EmployeeService {
       .map(response => response.json())
   }
 
-  delete() {
-    return this.http.get("/employees/delete/{id}")
+  delete(id) {
+    return this.http.get("/api/employees/delete/" + id)
       .map(response => response.json())
   }
 
