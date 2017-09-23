@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { EmployeeService } from '../../providers/employee.service';
 import { SearchService } from '../../providers/search.service';
 
@@ -13,7 +14,14 @@ export class CardComponent implements OnInit {
   search: any[];
   isLoad: boolean = false;
 
-  constructor(public employeeService: EmployeeService, public searchService: SearchService) { }
+  constructor(public employeeService: EmployeeService, public searchService: SearchService) {
+    employeeService.employeeUpdatedEvent.subscribe(
+      (employees) => {
+        console.log("????????????? Data Modified in Card");
+        this.employees = this.addImages(employees)
+      }
+    );
+  }
 
   ngOnInit() {
     this.getEmployees();
@@ -24,7 +32,9 @@ export class CardComponent implements OnInit {
       .subscribe(
         data => {
           this.employees = this.addImages(data);
-        }, err => this.employees = err, () => {
+        },
+        err => this.employees = err,
+        () => {
           this.isLoad = true;
         }
       );
