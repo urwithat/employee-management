@@ -9,16 +9,7 @@ import { EmployeeService } from '../../providers/employee.service';
   styleUrls: ['./add.component.sass']
 })
 export class AddComponent implements OnInit {
-
-  firstName: string;
-  lastName: string;
-  emailAddress: string;
-  gender: string;  
-  genders = [
-    'Male',
-    'Female'
-  ];
-
+  
   constructor(public dialogRef: MdDialogRef<AddComponent>,
     @Inject(MD_DIALOG_DATA) public data: any, public employeeService: EmployeeService) { }
 
@@ -28,9 +19,9 @@ export class AddComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  save() {
-    this.employeeService.create(this.firstName, this.lastName, 
-      this.gender.toLowerCase(), this.emailAddress)
+  save(data) {
+    this.employeeService.create(data.firstName, data.lastName, 
+      data.gender.toLowerCase(), data.emailAddress)
       .subscribe(
         data => {
           this.employeeService.employeeUpdatedEvent.emit(data);
