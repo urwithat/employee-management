@@ -1,0 +1,43 @@
+<md-toolbar color="primary">
+    <span>Employee Dashboard</span>
+    <span id="example-spacer"></span>
+    <button md-button aria-label="List View">
+      <span class="nav-link" [routerLink]="['list']">
+        <md-icon>list</md-icon>
+      </span>
+    </button>
+    <button md-button aria-label="Card View">
+      <span class="nav-link" [routerLink]="['card']">
+        <md-icon>view_comfy</md-icon>
+      </span>
+    </button>
+    <button md-button aria-label="Download">
+      <span class="nav-link">
+        <a target="_self" href="/api/download" download="employees.xlsx">
+          <md-icon>file_download</md-icon>
+        </a>
+      </span>
+    </button>
+
+
+    <!-- <button md-button aria-label="Upload">
+      <span class="nav-link" [routerLink]="['upload']">
+        <md-icon>file_upload</md-icon>
+      </span>
+    </button> -->
+
+    <button md-button aria-label="Upload" (click)="openDialog()">
+      <span class="nav-link">
+        <md-icon>file_upload</md-icon>
+      </span>
+    </button>
+
+
+    <button md-button aria-label="Account" [mdMenuTriggerFor]="appMenu">
+      <md-icon>account_circle</md-icon>
+    </button>
+  </md-toolbar>
+  <md-menu #appMenu="mdMenu">
+    <button md-menu-item> Account </button>
+    <button md-menu-item> Contact </button>
+  </md-menu>

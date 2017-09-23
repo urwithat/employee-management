@@ -1,0 +1,21 @@
+<h1 md-dialog-title>{{data.title}}</h1>
+<div md-dialog-content>
+    {{data.subtitle}}
+    <app-input-file (onFileSelect)="onFileSelect($event)" [accept]="'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'">
+      <span class="nofiles">Choose file</span>
+      <span class="selected">Files selected</span>
+    </app-input-file>
+</div>
+<div md-dialog-actions>
+  <button md-button (click)="upload()" tabindex="2">Upload</button>
+</div>
+
+
+<!-- 
+data.title
+data.id
+data.firstName
+data.lastName
+data.gender
+data.emailAddress
+ -->

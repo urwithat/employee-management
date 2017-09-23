@@ -1,0 +1,16 @@
+<md-expansion-panel>
+  <md-expansion-panel-header>
+    <md-panel-title>
+      Filter
+    </md-panel-title>
+  </md-expansion-panel-header>
+  <md-form-field class="full-width">
+    <input #searchinput mdInput (keyup.enter)="onClick(searchinput.value)" 
+          (blur)="userInput != '' ? onClick(searchinput.value) : null"
+          [ngModel]="employees" (ngModelChange)="onClick(searchinput.value)">
+    <md-placeholder>
+      <span><md-icon>search</md-icon></span>
+    </md-placeholder>
+  </md-form-field>
+  <button (click)="onClick(searchinput.value)" type="button" class="btn btn-primary">Search</button>
+</md-expansion-panel>

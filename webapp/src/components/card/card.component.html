@@ -1,0 +1,32 @@
+  <!--
+  Copyright 2017 aTc Inc. All Rights Reserved. 
+  Use of this source code is governed by an MIT-style license that can be foundin the LICENSE file at http://material.angularjs.org/HEAD/license.
+  -->
+
+<app-search [result]=value (clicked)="onClicked($event)"></app-search>
+<div class="container">
+  <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutWrap="wrap" class="content">
+    <div class="blocks" fxFlex="30%" *ngFor="let employee of employees">
+      <md-card class="card">
+        <md-card-header>
+          <div>
+            <md-icon md-card-avatar *ngIf="employee.gender == 'female'">face</md-icon>
+            <md-icon md-card-avatar *ngIf="employee.gender == 'male'">tag_faces</md-icon>
+          </div>
+          <md-card-title>{{employee.firstName}} {{employee.lastName}}</md-card-title>
+          <md-card-subtitle>{{employee.emailAddress}}</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="{{employee.imagePath}}">
+        <md-card-content></md-card-content>
+        <md-card-actions>
+          <button md-button><md-icon>thumb_up</md-icon></button>
+          <button md-button><md-icon>share</md-icon></button>
+          <button md-button><md-icon>mode_comment</md-icon></button>
+          <button md-button><md-icon>mode_edit</md-icon></button>
+          <button md-button><md-icon>delete</md-icon></button>
+          <button md-button><md-icon>star</md-icon><md-icon>star</md-icon><md-icon>star</md-icon><md-icon>star_half</md-icon><md-icon>star_border</md-icon></button>
+        </md-card-actions>
+      </md-card>
+    </div>
+  </div>
+</div>

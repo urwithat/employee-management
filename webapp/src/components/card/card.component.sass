@@ -1,0 +1,51 @@
+$media-col-xs: 512px;
+$media-col-sm: 768px;
+$media-col-md: 992px;
+$media-col-lg: 1200px;
+
+md-card
+    background-color: #9575CD
+    md-card-header
+        md-icon
+            font-size: 2.5em !important;
+            height: 1em !important
+            width: 1em !important
+    md-card-actions
+        text-align: center
+        button
+            min-width: 50px
+
+
+@media (max-width: $media-col-xs)
+    .card
+        margin-top: 5%
+    .blocks
+        flex: 1 1 100% !important
+        max-width: 100% !important
+@media (min-width: $media-col-xs) and (max-width: $media-col-sm)
+    .card
+        margin-top: 5%
+    .blocks
+        flex: 1 1 45% !important
+        max-width: 45% !important
+
+@media (min-width: $media-col-sm) and (max-width: $media-col-md)
+    .card
+        margin-top: 5%
+    .blocks
+        flex: 1 1 30% !important
+        max-width: 30% !important
+  
+@media (min-width: $media-col-md) and (max-width: $media-col-lg)
+    .card
+        margin-top: 5%
+    .blocks
+        flex: 1 1 22% !important
+        max-width: 22% !important
+  
+@media (min-width: $media-col-lg)
+    .card
+        margin-top: 5%
+    .blocks
+        flex: 1 1 18% !important
+        max-width: 18% !important
