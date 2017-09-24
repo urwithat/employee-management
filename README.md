@@ -1,53 +1,47 @@
-  
   Employee Management
   ===================
-
-  ##  Running the Web Application
-      
   
-  ##  Development
-  
-  
-  
-  
-  
-  >  Note:  - All commands are in par with Windows Operating System
+  > Note:  - All commands are in par with Windows Operating System
   >    + Test Cases have not been addressed
   >    + Run commands from root folder D:\Workspace\..\employee-management
   >      cd D:\Workspace\..\employee-management
   >    + For Upload kindly use the excel template shared under D:\Workspace\..\employee-management\data
-    
-  ##  Software Stack Used
-      | No | Software                 | Version          |
-      | -- |:------------------------:| ----------------:|
-      | 01 | *NPM*                    | v4.6.1           |
-      | 02 | *Node*                   | v6.10.3          |
-      | 03 | *Maven*                  | v3.3.9           |
-      | 04 | *Java*                   | v1.8.0_121       |
-      | 05 | *MongoDB shell*          | v3.0.6           |
-      | 06 | *Visual Studio Code*     | v1.15.0          |
-      | 07 | *Eclipse oxygen*         | R-win32-x86_64   |    
-            
-  ##  Software Stack To Run the Executable
-      | No | Software                 | Tested on Version |
-      | -- |:------------------------:| -----------------:|
-      | 01 | *Java*                   | v1.8.0_121        |
-      | 02 | *MongoDB shell*          | v3.0.6            |
-     
+
+  ##  Running the Web Application
+
+      ####  Software Stack To Run the Executable
+            | No | Software                 | Tested on Version |
+            | -- |:------------------------:| -----------------:|
+            | 01 | *Java*                   | v1.8.0_121        |
+            | 02 | *MongoDB shell*          | v3.0.6            |
+
   ##  Development
+    
+      ####  Software Stack Used
+            | No | Software                 | Version          |
+            | -- |:------------------------:| ----------------:|
+            | 01 | *NPM*                    | v4.6.1           |
+            | 02 | *Node*                   | v6.10.3          |
+            | 03 | *Maven*                  | v3.3.9           |
+            | 04 | *Java*                   | v1.8.0_121       |
+            | 05 | *MongoDB shell*          | v3.0.6           |
+            | 06 | *Visual Studio Code*     | v1.15.0          |
+            | 07 | *Eclipse oxygen*         | R-win32-x86_64   |
+
+      ####  Start Up Mongodb
+            - open command prompt
+            ⋅⋅⋅`cd C:\Program Files\MongoDB\Server\3.0\bin`
   
-  
-     
-  ##  Start Up Mongodb
-  
-  open command prompt
-  cd C:\Program Files\MongoDB\Server\3.0\bin
-  
+
+
   # connect via clint
   mongo.exe
   
   # run mongo
-    C:\Program Files\MongoDB\Server\3.0\bin>mongod.exe
+    Create folder
+    d:\data\employees
+
+    C:\Program Files\MongoDB\Server\3.0\bin>mongod.exe --dbpath "c:\data\employees" --port 27017
   
   
       

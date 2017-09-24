@@ -9,7 +9,7 @@ RemoteSystemsTempFiles/
 
 
 ## Services
-services/target
+services/target/
 !services/.mvn/wrapper/maven-wrapper.jar
 services/node_modules/
 services/npm-debug.log/
