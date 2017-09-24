@@ -15,10 +15,9 @@ export class AppComponent {
   constructor(public snackBar: MdSnackBar, public loadingService: LoadingService) {
     loadingService.statusEvent.subscribe(
       (status) => {
-        console.log("=============>>>>>>>>>>>>>>>>>>> " + status);
         this.snackBar.openFromComponent(StatusComponent, {
           duration: 2000,
-          data: { message: status }
+          data: { message : status}
         });
       }
     );

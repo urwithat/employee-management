@@ -91,6 +91,7 @@ export class ListComponent implements OnInit {
     .subscribe(
       data => {
         this.employees = this.addImages(data);
+        this.loadingService.statusEvent.emit("Employee deleted successfully");
         this.loadingService.loadingEvent.emit(false);
       },
       err => this.employees = err, () => { }

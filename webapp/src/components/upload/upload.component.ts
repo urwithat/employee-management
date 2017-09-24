@@ -34,6 +34,7 @@ export class UploadComponent implements OnInit {
       .subscribe(
         data => {
           this.employeeService.employeeUpdatedEvent.emit(data);
+          this.loadingService.statusEvent.emit("Employees Uploaded successfully");
           this.loadingService.loadingEvent.emit(false);
           this.onNoClick();
         },
