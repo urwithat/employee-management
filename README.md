@@ -27,9 +27,9 @@ Employee Management
 
 ####  Start Up Mongodb
 - open command prompt
-  ```javascript
-  cd C:\Program Files\MongoDB\Server\3.0\bin
-  ```
+```javascript
+cd C:\Program Files\MongoDB\Server\3.0\bin
+```
 
 ####  run mongo
 - Create folder
