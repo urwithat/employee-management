@@ -22,20 +22,15 @@ d:\data\employees
 ```
 C:\Program Files\MongoDB\Server\3.0\bin>mongod.exe --dbpath "c:\data\employees" --port 27017
 ```
-```
-**MongoDB should have startup**
-```
+> **MongoDB should have startup**
 
 ####  Start Up Web Application
 - Open command prompt, and execute
 ```
 D:\Workspace\..\employee-management\executables>java -jar services/target/services-0.0.1.jar
 ```
-```
-**Web Application should have startup**, go to local running
-[Web Application](http://localhost:8080) on port 8080
-```
-[Web Application](http://localhost:8080)
+
+> **Web Application should have startup**, go to local running [Web Application](http://localhost:8080) on port 8080
 
 ##  Development
 ####  Software Stack Used
@@ -58,32 +53,28 @@ d:\data\employees
 ```
 C:\Program Files\MongoDB\Server\3.0\bin>mongod.exe --dbpath "c:\data\employees" --port 27017
 ```
-```
-*MongoDB should have startup*
-```
+> **MongoDB should have startup**
 
 ####  Build Angular 4 - WebApp
 - Open command prompt, and execute
 '''
 D:\Workspace\..\employee-management\webapp>ng build --env=prod
 '''
-*Angular WebApp built to production grade, files available under ..\webapp\dist*
+> **Angular WebApp built to production grade, files available under ..\webapp\dist**
   
 ####  Build Spring Boot - Services
 - Open command prompt, and execute
 '''
 D:\Workspace\..\employee-management\services>mvn package spring-boot:repackage
 '''
-- *Spring Boot Services built, files available under ..\services\target*
+> **Spring Boot Services built, files available under ..\services\target**
 
 ####  Start Up Web Application
 - Open command prompt, and execute
 ```
 D:\Workspace\..\employee-management\services\target>java -jar services/target/services-0.0.1.jar
 ```
-```
-*Web Application should have startup*, go to local running [Web Application](http://localhost:8080) on port 8080
-```
+> **Web Application should have startup**, go to local running [Web Application](http://localhost:8080) on port 8080
 
 
 
