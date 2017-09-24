@@ -1,28 +1,98 @@
-# Webapp
+  
+  Employee Management
+  ===================
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  ##  Running the Web Application
+      
+  
+  ##  Development
+  
+  
+  
+  
+  
+  >  Note:  - All commands are in par with Windows Operating System
+  >    + Test Cases have not been addressed
+  >    + Run commands from root folder D:\Workspace\..\employee-management
+  >      cd D:\Workspace\..\employee-management
+  >    + For Upload kindly use the excel template shared under D:\Workspace\..\employee-management\data
+    
+  ##  Software Stack Used
+      | No | Software                 | Version          |
+      | -- |:------------------------:| ----------------:|
+      | 01 | *NPM*                    | v4.6.1           |
+      | 02 | *Node*                   | v6.10.3          |
+      | 03 | *Maven*                  | v3.3.9           |
+      | 04 | *Java*                   | v1.8.0_121       |
+      | 05 | *MongoDB shell*          | v3.0.6           |
+      | 06 | *Visual Studio Code*     | v1.15.0          |
+      | 07 | *Eclipse oxygen*         | R-win32-x86_64   |    
+            
+  ##  Software Stack To Run the Executable
+      | No | Software                 | Tested on Version |
+      | -- |:------------------------:| -----------------:|
+      | 01 | *Java*                   | v1.8.0_121        |
+      | 02 | *MongoDB shell*          | v3.0.6            |
+     
+  ##  Development
+  
+  
+     
+  ##  Start Up Mongodb
+  
+  open command prompt
+  cd C:\Program Files\MongoDB\Server\3.0\bin
+  
+  # connect via clint
+  mongo.exe
+  
+  # run mongo
+    C:\Program Files\MongoDB\Server\3.0\bin>mongod.exe
+  
+  
+      
+  ##  Build the WebApp
+  #   Go to path
+      cd D:\Workspace\..\employee-management\webapp
+  #   Command builds production grade files under ..\webapp\dist
+      ng build --env=prod
+  
+  ##  Build the Service
+  #   Go to path
+      cd D:\Workspace\..\employee-management\services
+  #   Command builds production grade files under ..\services\target
+      mvn package spring-boot:repackage
+  #   Command to run the jar file and see console
+      java -jar services/target/services-0.0.1.jar
+      
+      
+        
+  
+- Fix card and list - click on full button
+- Layout of all pages
+- Search add/ edit/ delete clear search value
+- Clear option in search bar
+- Default Sort the data on first name
+- pagination on the card and list
+- filtering and sorting on the card and list
+- Directly accessing http://localhost:8080/card not working need to satrt from http://localhost:8080/
+- problem in delete many
+- List view when not employee data, remove place holder
+- Show loading mask
+- While searching, change from card to list view the searched items should remain and not clear
+- 
+  
+  
+  ------------------------------
+  
+  ## Angular project commands
+  ng new webapp
+  ng generate component card
+  ng generate component search --module=app.module
+  
+  ## 
+  
+  ## Git
+  $ git add .
+  $ git commit -m "New Features"
+  $ git push -u origin master
