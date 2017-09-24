@@ -26,13 +26,12 @@ Employee Management
 | 07 | *Eclipse oxygen*         | R-win32-x86_64   |
 
 ####  Start Up Mongodb
-- open command prompt
-⋅⋅⋅ abc
-⋅⋅⋅ `cd C:\Program Files\MongoDB\Server\3.0\bin`
+- open command prompt \s\s
+  `cd C:\Program Files\MongoDB\Server\3.0\bin`
 
 ####  run mongo
-- Create folder
-`d:\data\employees`
+- Create folder \s\s
+  `d:\data\employees`
 
 `C:\Program Files\MongoDB\Server\3.0\bin>mongod.exe --dbpath "c:\data\employees" --port 27017`
 
