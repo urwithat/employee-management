@@ -23,7 +23,7 @@ d:\data\employees
 C:\Program Files\MongoDB\Server\3.0\bin>mongod.exe --dbpath "c:\data\employees" --port 27017
 ```
 ```
-*MongoDB should have startup*
+**MongoDB should have startup**
 ```
 
 ####  Start Up Web Application
@@ -32,8 +32,10 @@ C:\Program Files\MongoDB\Server\3.0\bin>mongod.exe --dbpath "c:\data\employees" 
 D:\Workspace\..\employee-management\executables>java -jar services/target/services-0.0.1.jar
 ```
 ```
-*Web Application should have startup*, go to local running [Web Application](http://localhost:8080) on port 8080
+**Web Application should have startup**, go to local running
+[Web Application](http://localhost:8080) on port 8080
 ```
+[Web Application](http://localhost:8080)
 
 ##  Development
 ####  Software Stack Used
