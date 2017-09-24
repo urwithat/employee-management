@@ -93,7 +93,7 @@ export class CardComponent implements OnInit {
     .subscribe(
       data => {
         this.employees = this.addImages(data);
-        this.loadingService.statusEvent.emit("Employee deleted successfully");
+        this.loadingService.statusEvent.emit("Employee Deleted Successfully");
         this.loadingService.loadingEvent.emit(false);
       },
       err => this.employees = err, () => { }

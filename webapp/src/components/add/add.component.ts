@@ -29,7 +29,7 @@ export class AddComponent implements OnInit {
         .subscribe(
           data => {
             this.employeeService.employeeUpdatedEvent.emit(data);
-            this.loadingService.statusEvent.emit("Employee Updated successfully");
+            this.loadingService.statusEvent.emit("Employee Updated Successfully");
             this.loadingService.loadingEvent.emit(false);
             this.onNoClick();
           }
@@ -41,7 +41,7 @@ export class AddComponent implements OnInit {
         .subscribe(
           data => {
             this.employeeService.employeeUpdatedEvent.emit(data);
-            this.loadingService.statusEvent.emit("Employee Created successfully");
+            this.loadingService.statusEvent.emit("Employee Created Successfully");
             this.loadingService.loadingEvent.emit(false);
             this.onNoClick();
           }

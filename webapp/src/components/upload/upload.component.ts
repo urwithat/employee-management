@@ -29,19 +29,21 @@ export class UploadComponent implements OnInit {
   }
 
   upload() {
-    this.loadingService.loadingEvent.emit(true);
-    this.uploadRef = this.excelService.uploadfile('/api/upload', [], this.fileList)
-      .subscribe(
-        data => {
-          this.employeeService.employeeUpdatedEvent.emit(data);
-          this.loadingService.statusEvent.emit("Employees Uploaded successfully");
-          this.loadingService.loadingEvent.emit(false);
-          this.onNoClick();
-        },
-        progress => {
-          this.onNoClick();
-        }
-      )
+    if(this.fileList) {
+      this.loadingService.loadingEvent.emit(true);
+      this.uploadRef = this.excelService.uploadfile('/api/upload', [], this.fileList)
+        .subscribe(
+          data => {
+            this.employeeService.employeeUpdatedEvent.emit(data);
+            this.loadingService.statusEvent.emit("Employees Uploaded Successfully");
+            this.loadingService.loadingEvent.emit(false);
+            this.onNoClick();
+          },
+          progress => {
+            this.onNoClick();
+          }
+        )
+    }
   }
 
 }
