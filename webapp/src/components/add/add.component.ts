@@ -20,13 +20,29 @@ export class AddComponent implements OnInit {
   }
 
   save(data) {
-    this.employeeService.create(data.id, data.firstName, data.lastName, 
-      data.gender.toLowerCase(), data.emailAddress)
-      .subscribe(
-        data => {
-          this.employeeService.employeeUpdatedEvent.emit(data);
-          this.onNoClick();
-        }
-      )
+
+    console.log("============== Id for save :: " + data.id);
+
+    if(data.id != null && data.id != "") {
+      console.log("=============>>>>>>>>>>>>>>>> Save - Update");
+      this.employeeService.update(data.id, data.firstName, data.lastName, 
+        data.gender.toLowerCase(), data.emailAddress)
+        .subscribe(
+          data => {
+            this.employeeService.employeeUpdatedEvent.emit(data);
+            this.onNoClick();
+          }
+        )
+    } else {
+      console.log("=============>>>>>>>>>>>>>>>> Save - Create");
+      this.employeeService.create(data.firstName, data.lastName, 
+        data.gender.toLowerCase(), data.emailAddress)
+        .subscribe(
+          data => {
+            this.employeeService.employeeUpdatedEvent.emit(data);
+            this.onNoClick();
+          }
+        )
+    }
   }
 }

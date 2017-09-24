@@ -28,6 +28,7 @@ public class EmployeeController {
 				ObjectMapper objectMapper = new ObjectMapper();
 				try {
 					Employee employee = objectMapper.readValue(payload, Employee.class);
+					employee.setId(generateId());
 					DB.getEmployeeDao().save(employee);
 					return DB.getEmployeeDao().findAll();
 				} catch (IOException e) {
@@ -39,6 +40,16 @@ public class EmployeeController {
 			}
 		} else {
 			return DB.getEmployeeDao().findAll();
+		}
+	}
+	
+	private String generateId() {
+		String generateNewId = "EMP" + (int) (Math.floor(Math.random() * (Math.floor(99999999) - Math.ceil(11111111)) + Math.ceil(11111111)));
+		Employee checkIdExists = DB.getEmployeeDao().findById(generateNewId);
+		if(checkIdExists != null) {
+			return generateId();
+		} else {
+			return generateNewId;
 		}
 	}
 	
@@ -54,7 +65,7 @@ public class EmployeeController {
 	}
 	
 	@RequestMapping(value = "/employees/update", method = RequestMethod.PUT)
-	public String update(@RequestBody String payload) {
+	public List<Employee> update(@RequestBody String payload) {
 		if(payload != null) {
 			if(payload.trim().length() != 0) {
 				ObjectMapper objectMapper = new ObjectMapper();
@@ -67,19 +78,23 @@ public class EmployeeController {
 						employee.setGender(employeeModified.getGender());
 						employee.setEmailAddress(employeeModified.getEmailAddress());
 						DB.getEmployeeDao().save(employee);
-						return Helper.EMP_SUCCESS_UPDATE.value();
+						return DB.getEmployeeDao().findAll();
 					} else {
-						return Helper.EMP_ERROR_NO_DATA.value();
+						//return Helper.EMP_ERROR_NO_DATA.value();
+						return DB.getEmployeeDao().findAll();
 					}
 				} catch (IOException e) {
 					e.printStackTrace();
-					return Helper.EMP_ERROR.value();
+					//return Helper.EMP_ERROR.value();
+					return DB.getEmployeeDao().findAll();
 				}
 			} else {
-				return Helper.EMP_ERROR_PARAMETERS.value();
+				//return Helper.EMP_ERROR_PARAMETERS.value();
+				return DB.getEmployeeDao().findAll();
 			}
 		} else {
-			return Helper.EMP_ERROR_PARAMETERS.value();
+			//return Helper.EMP_ERROR_PARAMETERS.value();
+			return DB.getEmployeeDao().findAll();
 		}
 	}
 	

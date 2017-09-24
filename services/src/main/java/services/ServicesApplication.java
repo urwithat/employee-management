@@ -27,17 +27,20 @@ public class ServicesApplication implements CommandLineRunner {
 		DB.getEmployeeDao().deleteAll();
 		
 		// Store Employees
-//		DB.getEmployeeDao().save(new Employee("ABC024", "User1", "Admin", "male", "user1@gmail.com"));
-//		DB.getEmployeeDao().save(new Employee("ABC048", "User2", "Developer", "female", "user2@gmail.com"));
-//		DB.getEmployeeDao().save(new Employee("ABC060", "User3", "Architect", "male", "user3@gmail.com"));
-//		DB.getEmployeeDao().save(new Employee("ABC082", "User4", "Tester", "male", "user4@gmail.com"));
-//		DB.getEmployeeDao().save(new Employee("ABC204", "User5", "Manager", "female", "user5@gmail.com"));
-//		DB.getEmployeeDao().save(new Employee("ABC226", "User6", "DevOps", "male", "user6@gmail.com"));
-//		DB.getEmployeeDao().save(new Employee("ABC248", "User7", "Sys", "male", "user7@gmail.com"));
-//		DB.getEmployeeDao().save(new Employee("ABC260", "User8", "User", "female", "user8@gmail.com"));
-//		DB.getEmployeeDao().save(new Employee("ABC282", "User9", "Master", "male", "user9@gmail.com"));
-//		DB.getEmployeeDao().save(new Employee("ABC304", "User10", "Super", "female", "user10@gmail.com"));
-		
+		DB.getEmployeeDao().save(new Employee("EMP1", "First Name 01", "Last Name 01", "male", "user01@employer.com"));
+		DB.getEmployeeDao().save(new Employee("EMP2", "First Name 02", "Last Name 02", "female", "user02@employer.com"));
+		DB.getEmployeeDao().save(new Employee("EMP3", "First Name 03", "Last Name 03", "male", "user03@employer.com"));
+		DB.getEmployeeDao().save(new Employee("EMP4", "First Name 04", "Last Name 04", "male", "user04@employer.com"));
+		DB.getEmployeeDao().save(new Employee("EMP11", "First Name 01", "Last Name 01", "male", "user01@employer.com"));
+		DB.getEmployeeDao().save(new Employee("EMP111", "First Name 02", "Last Name 02", "female", "user02@employer.com"));
+		DB.getEmployeeDao().save(new Employee("EMP1111", "First Name 03", "Last Name 03", "male", "user03@employer.com"));
+		DB.getEmployeeDao().save(new Employee("EMP11111", "First Name 04", "Last Name 04", "male", "user04@employer.com"));
+//		DB.getEmployeeDao().save(new Employee("EMP499812", "First Name 05", "Last Name 05", "female", "user05@employer.com"));
+//		DB.getEmployeeDao().save(new Employee("EMP499821", "First Name 06", "Last Name 06", "female", "user06@employer.com"));
+//		DB.getEmployeeDao().save(new Employee("EMP429322", "First Name 07", "Last Name 07", "female", "user07@employer.com"));
+//		DB.getEmployeeDao().save(new Employee("EMP423822", "First Name 08", "Last Name 08", "male", "user08@employer.com"));
+//		DB.getEmployeeDao().save(new Employee("EMP499232", "First Name 09", "Last Name 09", "female", "user09@employer.com"));
+//		DB.getEmployeeDao().save(new Employee("EMP400002", "First Name 10", "Last Name 10", "male", "user10@employer.com"));
 		
 		
 	}

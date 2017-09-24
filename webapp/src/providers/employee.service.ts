@@ -10,9 +10,9 @@ export class EmployeeService {
   constructor(public http: Http) {
   }
 
-  create(id, firstName, lastName, gender, emailAddress) {
+  create(firstName, lastName, gender, emailAddress) {
     let data = {
-      "id": (id ? id : this.id()),
+      "id": null,
       "firstName": firstName,
       "lastName": lastName,
       "gender": gender,
@@ -27,17 +27,25 @@ export class EmployeeService {
       .map(response => response.json())
   }
 
-  update() {
-    return this.http.get("/api/employees/update")
+  update(id, firstName, lastName, gender, emailAddress) {
+    let data = {
+      "id": id,
+      "firstName": firstName,
+      "lastName": lastName,
+      "gender": gender,
+      "emailAddress": emailAddress
+    }
+    return this.http.put("/api/employees/update", data)
       .map(response => response.json())
   }
 
   delete(id) {
+    
     return this.http.get("/api/employees/delete/" + id)
       .map(response => response.json())
   }
 
-  id() {
-    return Math.random() * (999999 - 111111) + 111111;
-  }
+  // id() {
+  //   return "EMP" + Math.floor(Math.random() * (999999 - 111111) + 111111);
+  // }
 }
