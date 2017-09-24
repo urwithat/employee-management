@@ -13,22 +13,21 @@ Employee Management
 | 01 | *Java*                   | v1.8.0_121        |
 | 02 | *MongoDB shell*          | v3.0.6            |
 
-  ##  Development
-    
-      ####  Software Stack Used
-            | No | Software                 | Version          |
-            | -- |:------------------------:| ----------------:|
-            | 01 | *NPM*                    | v4.6.1           |
-            | 02 | *Node*                   | v6.10.3          |
-            | 03 | *Maven*                  | v3.3.9           |
-            | 04 | *Java*                   | v1.8.0_121       |
-            | 05 | *MongoDB shell*          | v3.0.6           |
-            | 06 | *Visual Studio Code*     | v1.15.0          |
-            | 07 | *Eclipse oxygen*         | R-win32-x86_64   |
+##  Development
+####  Software Stack Used
+| No | Software                 | Version          |
+| -- |:------------------------:| ----------------:|
+| 01 | *NPM*                    | v4.6.1           |
+| 02 | *Node*                   | v6.10.3          |
+| 03 | *Maven*                  | v3.3.9           |
+| 04 | *Java*                   | v1.8.0_121       |
+| 05 | *MongoDB shell*          | v3.0.6           |
+| 06 | *Visual Studio Code*     | v1.15.0          |
+| 07 | *Eclipse oxygen*         | R-win32-x86_64   |
 
-      ####  Start Up Mongodb
-            - open command prompt
-            ⋅⋅⋅`cd C:\Program Files\MongoDB\Server\3.0\bin`
+####  Start Up Mongodb
+- open command prompt
+⋅⋅⋅`cd C:\Program Files\MongoDB\Server\3.0\bin`
   
 
 
