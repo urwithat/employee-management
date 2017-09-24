@@ -78,6 +78,13 @@ C:\Program Files\MongoDB\Server\3.0\bin>mongod.exe --dbpath "c:\data\employees" 
 > **MongoDB should have startup**
 
 ####  Start Up Web Application
+- Go to  folder
+```
+D:\Workspace\..\employee-management\executables
+```
+```
+Rename **services-0.0.1.jar.rename** to **services-0.0.1.jar**
+```
 - Open command prompt, and execute
 ```
 D:\Workspace\..\employee-management\executables>java -jar services/target/services-0.0.1.jar
