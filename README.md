@@ -23,13 +23,9 @@ Employee Management
 - Leveraged Angular Material Design
 - Fully reponsive web application
 - Loading mask with Material Progress Bar
-- 
+- Status Message popup
 
 ##  Know Issues
-
-- Functionality - Fix card and list - click on full button
-- Look and Feel - Layout of all pages
-
 - Look and Feel - List view when not employee data, remove place holder
 - Functionality - Clear option in search bar
 - Functionality - Search add/ edit/ delete clear search value

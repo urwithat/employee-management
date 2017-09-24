@@ -4,7 +4,7 @@ import { MD_SNACK_BAR_DATA } from '@angular/material';
 @Component({
   selector: 'app-status',
   templateUrl: './status.component.html',
-  styleUrls: ['./status.component.css']
+  styleUrls: ['./status.component.sass']
 })
 export class StatusComponent implements OnInit {
 

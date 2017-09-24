@@ -16,7 +16,7 @@ export class AppComponent {
     loadingService.statusEvent.subscribe(
       (status) => {
         this.snackBar.openFromComponent(StatusComponent, {
-          duration: 2000,
+          duration: 5000,
           data: { message : status}
         });
       }

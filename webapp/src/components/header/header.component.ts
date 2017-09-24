@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
 
   openUploadDialog(): void {
     let dialogRef = this.dialog.open(UploadComponent, {
-      height: '30%',
+      height: '40%',
       width: '60%',
       data: { title: this.uploadTitle, subtitle: this.uploadSubtitle }
     });
@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
 
   openAddDialog(): void {
     let dialogRef = this.dialog.open(AddComponent, {
-      height: '80%',
+      height: '75%',
       width: '60%',
       data: { title: this.addTitle, subtitle: this.addSubtitle, 
         employee: { id: "", firstName: "", lastName: "", emailAddress: "", gender: "" } }

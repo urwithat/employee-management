@@ -14,10 +14,12 @@
       <md-form-field class="full-width">
         <input name="emailAddress" mdInput [(ngModel)]="data.employee.emailAddress"  required email placeholder="Email Address">
       </md-form-field>
-      <md-radio-group name="gender" required selected [(ngModel)]="data.employee.gender" class="radio-group">
-        <md-radio-button value="male" name="genderMale">Male</md-radio-button>
-        <md-radio-button value="female" name="genderFemale">Female</md-radio-button>
-      </md-radio-group>
+      <span class="md-radio">
+        <md-radio-group name="gender" required selected [(ngModel)]="data.employee.gender" class="radio-group">
+          <md-radio-button value="male" name="genderMale">Male</md-radio-button>
+          <md-radio-button value="female" name="genderFemale">Female</md-radio-button>
+        </md-radio-group>
+      </span>
     </p>
     <input name="id" type="hidden"[(ngModel)]="data.employee.id">
   </div>
