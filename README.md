@@ -83,13 +83,12 @@ C:\Program Files\MongoDB\Server\3.0\bin>mongod.exe --dbpath "c:\data\employees" 
 D:\Workspace\..\employee-management\executables
 ```
 ```
-Rename **services-0.0.1.jar.rename** to **services-0.0.1.jar**
+Rename "services-0.0.1.jar.rename" to "services-0.0.1.jar"
 ```
 - Open command prompt, and execute
 ```
 D:\Workspace\..\employee-management\executables>java -jar services/target/services-0.0.1.jar
 ```
-
 > **Web Application should have startup**, go to local running [Web Application](http://localhost:8080) on port 8080
 
 ---
@@ -132,9 +131,16 @@ D:\Workspace\..\employee-management\services>mvn package spring-boot:repackage
 > **Spring Boot Services built, files available under ..\services\target**
 
 ####  Start Up Web Application
+- Go to  folder
+```
+D:\Workspace\..\employee-management\executables
+```
+```
+Rename "services-0.0.1.jar.rename" to "services-0.0.1.jar"
+```
 - Open command prompt, and execute
 ```
-D:\Workspace\..\employee-management\services\target>java -jar services/target/services-0.0.1.jar
+D:\Workspace\..\employee-management\executables>java -jar services/target/services-0.0.1.jar
 ```
 > **Web Application should have startup**, go to local running [Web Application](http://localhost:8080) on port 8080
 
