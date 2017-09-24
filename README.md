@@ -13,6 +13,29 @@ Employee Management
 | 01 | *Java*                   | v1.8.0_121        |
 | 02 | *MongoDB shell*          | v3.0.6            |
 
+####  Start Up Mongodb
+- Create folder under
+```
+d:\data\employees
+```
+- Open command prompt, and execute
+```
+C:\Program Files\MongoDB\Server\3.0\bin>mongod.exe --dbpath "c:\data\employees" --port 27017
+```
+*MongoDB should have startup*
+
+####  Start Up Web Application
+- Open command prompt, and execute
+```
+D:\Workspace\..\employee-management\executables>
+```
+java -jar services/target/services-0.0.1.jar
+```
+- *Web Application should have startup*, go to
+```
+http://localhost:8080
+```
+
 ##  Development
 ####  Software Stack Used
 | No | Software                 | Version          |
@@ -26,44 +49,39 @@ Employee Management
 | 07 | *Eclipse oxygen*         | R-win32-x86_64   |
 
 ####  Start Up Mongodb
-- open command prompt
-```javascript
-cd C:\Program Files\MongoDB\Server\3.0\bin
+- Create folder under
 ```
+d:\data\employees
+```
+- Open command prompt, and execute
+```
+C:\Program Files\MongoDB\Server\3.0\bin>mongod.exe --dbpath "c:\data\employees" --port 27017
+```
+*MongoDB should have startup*
 
-####  run mongo
-- Create folder
-  ⋅⋅⋅`d:\data\employees`⋅⋅⋅
-
-`C:\Program Files\MongoDB\Server\3.0\bin>mongod.exe --dbpath "c:\data\employees" --port 27017`
-
-
-
-
-
-
-  # connect via clint
-  mongo.exe
+####  Build Angular 4 - WebApp
+- Open command prompt, and execute
+'''
+D:\Workspace\..\employee-management\webapp>ng build --env=prod
+'''
+*Angular WebApp built to production grade, files available under ..\webapp\dist*
   
-  
-  
-  
-      
-  ##  Build the WebApp
-  #   Go to path
-      cd D:\Workspace\..\employee-management\webapp
-  #   Command builds production grade files under ..\webapp\dist
-      ng build --env=prod
-  
-  ##  Build the Service
-  #   Go to path
-      cd D:\Workspace\..\employee-management\services
-  #   Command builds production grade files under ..\services\target
-      mvn package spring-boot:repackage
-  #   Command to run the jar file and see console
-      java -jar services/target/services-0.0.1.jar
-      
-      
+####  Build Spring Boot - Services
+- Open command prompt, and execute
+'''
+D:\Workspace\..\employee-management\services>mvn package spring-boot:repackage
+'''
+- *Spring Boot Services built, files available under ..\services\target*
+
+####  Start Up Web Application
+- Open command prompt, and execute
+```
+D:\Workspace\..\employee-management\services\target>java -jar services/target/services-0.0.1.jar
+```
+- *Web Application should have startup*, go to
+```
+http://localhost:8080
+```
         
   
 - Fix card and list - click on full button
