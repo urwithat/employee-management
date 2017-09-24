@@ -12,6 +12,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -67,7 +68,7 @@ public class ExcelController {
 				e.printStackTrace();
 			}
 		}
-		return DB.getEmployeeDao().findAll();
+		return DB.getEmployeeDao().findAll(new Sort(Sort.Direction.ASC, "firstName"));
 	}
 	
 	@RequestMapping(value = "/download", method = RequestMethod.GET)
@@ -81,7 +82,7 @@ public class ExcelController {
 		row.createCell(2).setCellValue("LastName");
 		row.createCell(3).setCellValue("Gender");
 		row.createCell(4).setCellValue("Email Address");
-		for (Employee employee : DB.getEmployeeDao().findAll())
+		for (Employee employee : DB.getEmployeeDao().findAll(new Sort(Sort.Direction.ASC, "firstName")))
 		{
 			row = sheet.createRow(++rownum);
 			row.createCell(0).setCellValue(employee.getId());

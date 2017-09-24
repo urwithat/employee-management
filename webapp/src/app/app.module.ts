@@ -19,10 +19,13 @@ import { SearchComponent } from '../components/search/search.component';
 import { UploadComponent } from '../components/upload/upload.component';
 import { InputFileComponent } from '../components/input-file/input-file.component';
 import { AddComponent } from '../components/add/add.component';
+import { LoadingComponent } from '../components/loading/loading.component';
+import { StatusComponent } from '../components/status/status.component';
 
 import { EmployeeService } from '../providers/employee.service';
 import { ExcelService } from '../providers/excel.service';
 import { SearchService } from '../providers/search.service';
+import { LoadingService } from '../providers/loading.service';
 
 @NgModule({
   declarations: [ 
@@ -33,7 +36,9 @@ import { SearchService } from '../providers/search.service';
     HeaderComponent,
     UploadComponent,
     InputFileComponent,
-    AddComponent
+    AddComponent,
+    LoadingComponent,
+    StatusComponent
   ], exports: [
     MdButtonModule,
     MdCardModule,
@@ -54,10 +59,12 @@ import { SearchService } from '../providers/search.service';
   ], providers: [
     EmployeeService,
     ExcelService,
-    SearchService
+    SearchService,
+    LoadingService
   ], entryComponents: [
     UploadComponent,
-    AddComponent
+    AddComponent,
+    StatusComponent
   ],
   bootstrap: [AppComponent]
 })

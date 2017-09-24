@@ -3,6 +3,7 @@ import { MdDialog } from '@angular/material';
 
 import { EmployeeService } from '../../providers/employee.service';
 import { SearchService } from '../../providers/search.service';
+import { LoadingService } from '../../providers/loading.service';
 import { AddComponent } from "../add/add.component";
 
 @Component({
@@ -15,7 +16,8 @@ export class ListComponent implements OnInit {
   employees: any[];
   search: any[];
 
-  constructor(public employeeService: EmployeeService, public searchService: SearchService, public dialog: MdDialog) {
+  constructor(public employeeService: EmployeeService, public searchService: SearchService,
+    public dialog: MdDialog, public loadingService: LoadingService) {
     employeeService.employeeUpdatedEvent.subscribe(
       (employees) => {
         this.employees = this.addImages(employees);
@@ -28,20 +30,24 @@ export class ListComponent implements OnInit {
   }
 
   getEmployees() {
+    this.loadingService.loadingEvent.emit(true);
     this.employeeService.readAll()
       .subscribe(
         data => {
           this.employees = this.addImages(data);
+          this.loadingService.loadingEvent.emit(false);
         },
         err => this.employees = err, () => { }
       );
   }
 
   searchEmployees(term) {
+    this.loadingService.loadingEvent.emit(true);
     this.searchService.searchByTerm(term)
       .subscribe(
         data => {
           this.employees = this.addImages(data);
+          this.loadingService.loadingEvent.emit(false);
         }, err => this.employees = err, () => { }
       );
   }
@@ -80,10 +86,12 @@ export class ListComponent implements OnInit {
   }
 
   deleteEmployee(id): void {
+    this.loadingService.loadingEvent.emit(true);
     this.employeeService.delete(id)
     .subscribe(
       data => {
         this.employees = this.addImages(data);
+        this.loadingService.loadingEvent.emit(false);
       },
       err => this.employees = err, () => { }
     );

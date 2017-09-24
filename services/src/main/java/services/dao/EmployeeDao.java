@@ -2,12 +2,14 @@ package services.dao;
 
 import java.util.List;
 import services.model.Employee;
+
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
 public interface EmployeeDao extends MongoRepository<Employee, String> {
 
-	public Employee findById(String id);
+	public Employee findById(String id, Sort sort);
 
 	@Query("{$and :["
 			+ "?#{[0] == null ? { $where : 'true'} : { 'id' : { $regex: [0], $options: 'i' } } }, "
@@ -16,7 +18,7 @@ public interface EmployeeDao extends MongoRepository<Employee, String> {
 			+ "?#{[3] == null ? { $where : 'true'} : { 'gender' : { $regex: [3], $options: 'i' } } }, "
 			+ "?#{[4] == null ? { $where : 'true'} : { 'emailAddress' : { $regex: [4], $options: 'i' } } }"
 			+ "]}")
-	public List<Employee> findByAny(String id, String firstName, String lastName, String gender, String emailAddress);
+	public List<Employee> findByAny(String id, String firstName, String lastName, String gender, String emailAddress, Sort sort);
 	
 	@Query("{$or :["
 			+ "?#{[0] == null ? { $where : 'true'} : { 'id' : { $regex: [0], $options: 'i' } } }, "
@@ -25,6 +27,6 @@ public interface EmployeeDao extends MongoRepository<Employee, String> {
 			+ "?#{[0] == null ? { $where : 'true'} : { 'gender' : { $regex: [0], $options: 'i' } } }, "
 			+ "?#{[0] == null ? { $where : 'true'} : { 'emailAddress' : { $regex: [0], $options: 'i' } } }"
 			+ "]}")
-	public List<Employee> findByAnyInAny(String term);
+	public List<Employee> findByAnyInAny(String term, Sort sort);
 	
 }

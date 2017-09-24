@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 
 import { EmployeeService } from '../../providers/employee.service';
+import { LoadingService } from '../../providers/loading.service';
 
 @Component({
   selector: 'app-add',
@@ -11,7 +12,8 @@ import { EmployeeService } from '../../providers/employee.service';
 export class AddComponent implements OnInit {
 
   constructor(public dialogRef: MdDialogRef<AddComponent>,
-    @Inject(MD_DIALOG_DATA) public data: any, public employeeService: EmployeeService) { }
+    @Inject(MD_DIALOG_DATA) public data: any, public employeeService: EmployeeService, 
+    public loadingService: LoadingService) { }
 
   ngOnInit() { }
 
@@ -20,26 +22,25 @@ export class AddComponent implements OnInit {
   }
 
   save(data) {
-
-    console.log("============== Id for save :: " + data.id);
-
     if(data.id != null && data.id != "") {
-      console.log("=============>>>>>>>>>>>>>>>> Save - Update");
+      this.loadingService.loadingEvent.emit(true);
       this.employeeService.update(data.id, data.firstName, data.lastName, 
         data.gender.toLowerCase(), data.emailAddress)
         .subscribe(
           data => {
             this.employeeService.employeeUpdatedEvent.emit(data);
+            this.loadingService.loadingEvent.emit(false);
             this.onNoClick();
           }
         )
     } else {
-      console.log("=============>>>>>>>>>>>>>>>> Save - Create");
+      this.loadingService.loadingEvent.emit(true);
       this.employeeService.create(data.firstName, data.lastName, 
         data.gender.toLowerCase(), data.emailAddress)
         .subscribe(
           data => {
             this.employeeService.employeeUpdatedEvent.emit(data);
+            this.loadingService.loadingEvent.emit(false);
             this.onNoClick();
           }
         )

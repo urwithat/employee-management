@@ -1,18 +1,15 @@
 package services.controller;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.util.List;
 
 import services.dao.DB;
-import services.common.Helper;
 import services.model.Employee;
 
 @RestController
@@ -20,45 +17,22 @@ import services.model.Employee;
 public class SearchController {
 
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public String read(@RequestParam(value = "id", required = false) String id, 
+	public List<Employee> read(@RequestParam(value = "id", required = false) String id, 
 			@RequestParam(value = "firstName", required = false) String firstName, 
 			@RequestParam(value = "lastName", required = false) String lastName, 
 			@RequestParam(value = "gender", required = false) String gender, 
 			@RequestParam(value = "emailAddress", required = false) String emailAddress) {
-		
-		List<Employee> employees = DB.getEmployeeDao().findByAny(id, firstName, lastName, gender, emailAddress);
-		ObjectMapper objectMapper = new ObjectMapper();
-		try {
-			return objectMapper.writeValueAsString(employees);
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-			return Helper.EMP_ERROR.value();
-		}
+		return DB.getEmployeeDao().findByAny(id, firstName, lastName, gender, emailAddress, new Sort(Sort.Direction.ASC, "firstName"));
 	}
 	
 	@RequestMapping(value = "/search/id/{id}", method = RequestMethod.GET)
-	public String readById(@PathVariable("id") String id) {
-		Employee employees = DB.getEmployeeDao().findById(id);
-		ObjectMapper objectMapper = new ObjectMapper();
-		try {
-			return objectMapper.writeValueAsString(employees);
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-			return Helper.EMP_ERROR.value();
-		}
+	public Employee readById(@PathVariable("id") String id) {
+		return DB.getEmployeeDao().findById(id, new Sort(Sort.Direction.ASC, "firstName"));
 	}
 	
 	@RequestMapping(value = "/search/term/{term}", method = RequestMethod.GET)
-	public String readAll(@PathVariable("term") String term) {
-		//DB.getEmployeeDao().
-		List<Employee> employees = DB.getEmployeeDao().findByAnyInAny(term);
-		ObjectMapper objectMapper = new ObjectMapper();
-		try {
-			return objectMapper.writeValueAsString(employees);
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-			return Helper.EMP_ERROR.value();
-		}
+	public List<Employee> readAll(@PathVariable("term") String term) {
+		return DB.getEmployeeDao().findByAnyInAny(term, new Sort(Sort.Direction.ASC, "firstName"));
 	}
 	
 }

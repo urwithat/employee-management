@@ -1,0 +1,13 @@
+<!-- <div [class.loader-hidden]="!show">
+  <div loader-overlay style="width:100%; height: 50px; background: red;">
+          <div>
+              <md-progress-bar mode="indeterminate" *ngIf="show"></md-progress-bar>
+          </div>
+  </div>
+</div> -->
+
+<div *ngIf="show" class="progress-bar">
+  <md-progress-bar  color="#DD2C00" mode="indeterminate"></md-progress-bar>
+  <div class="progress-bar-heading">Hang on We're getting there!</div>
+  <div class="progress-bar-subheading">Seem slower than usual</div>
+</div>

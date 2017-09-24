@@ -22,24 +22,35 @@ Employee Management
 - View employees in Material List
 - Leveraged Angular Material Design
 - Fully reponsive web application
+- Loading mask with Material Progress Bar
+- 
 
 ##  Know Issues
-- Fix card and list - click on full button
-- Layout of all pages
-- Default Sort the data on first name
-- Loading mask
-- Directly accessing http://localhost:8080/card not working
-- List view when not employee data, remove place holder
-- Clear option in search bar
-- Search add/ edit/ delete clear search value
-- While searching, change from card to list view the searched items should remain and not clear
 
-##  Pending Features
+
+- Functionality - Show status of whats happeing - snack bar
+
+- Functionality - Fix card and list - click on full button
+- Look and Feel - Layout of all pages
+
+
+
+- merge card and list some how
+- Look and Feel - List view when not employee data, remove place holder
+- Functionality - Clear option in search bar
+- Functionality - Search add/ edit/ delete clear search value
+- Functionality - While searching, change from card to list view the searched items should remain and not clear
+
+#### Completed
+- Functionality - Loading mask
+- Functionality - Default Sort the data on first name
+- Functionality - Directly accessing http://localhost:8080/card not working
+
+##  Good To Have Features
 - Test Cases
 - Pagination in Material Card and List
 - Filtering in Material Card and List
 - Sorting in Material Card and List
-- 
 
 > Note: 
 > + All commands are in par with Windows Operating System
