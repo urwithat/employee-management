@@ -1,19 +1,17 @@
-  Employee Management
-  ===================
-  
-  > Note:  - All commands are in par with Windows Operating System
-  >    + Test Cases have not been addressed
-  >    + Run commands from root folder D:\Workspace\..\employee-management
-  >      cd D:\Workspace\..\employee-management
-  >    + For Upload kindly use the excel template shared under D:\Workspace\..\employee-management\data
+Employee Management
+===================
+> Note:  - All commands are in par with Windows Operating System
+>    + Test Cases have not been addressed
+>    + Run commands from root folder D:\Workspace\..\employee-management
+>      cd D:\Workspace\..\employee-management
+>    + For Upload kindly use the excel template shared under D:\Workspace\..\employee-management\data
 
-  ##  Running the Web Application
-
-      ####  Software Stack To Run the Executable
-            | No | Software                 | Tested on Version |
-            | -- |:------------------------:| -----------------:|
-            | 01 | *Java*                   | v1.8.0_121        |
-            | 02 | *MongoDB shell*          | v3.0.6            |
+##  Running the Web Application
+####  Software Stack To Run the Executable
+| No | Software                 | Tested on Version |
+| -- |:------------------------:| -----------------:|
+| 01 | *Java*                   | v1.8.0_121        |
+| 02 | *MongoDB shell*          | v3.0.6            |
 
   ##  Development
     
