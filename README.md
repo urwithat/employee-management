@@ -1,10 +1,52 @@
 Employee Management
 ===================
-> Note:  - All commands are in par with Windows Operating System
->    + Test Cases have not been addressed
->    + Run commands from root folder D:\Workspace\..\employee-management
->      cd D:\Workspace\..\employee-management
->    + For Upload kindly use the excel template shared under D:\Workspace\..\employee-management\data
+
+<dl>
+  <dt>Description</dt>
+  <dd>A single page application that can manage Employees.<em>tags</em>.</dd>
+  <dt>Technology</dt>
+  <dd>The web application has been built using Angular 4 and Java Spring Boot Web Services.</dd>
+</dl>
+
+---
+
+##  Features Covered
+- Read employees
+- Create employee
+- Update employee
+- Delete employee
+- Search employees in Material Card or List
+- Upload excel of new or update employees
+- Download excel of exisitng employees
+- View employees in Material Card
+- View employees in Material List
+- Leveraged Angular Material Design
+- Fully reponsive web application
+
+##  Know Issues
+- Fix card and list - click on full button
+- Layout of all pages
+- Default Sort the data on first name
+- Loading mask
+- Directly accessing http://localhost:8080/card not working
+- List view when not employee data, remove place holder
+- Clear option in search bar
+- Search add/ edit/ delete clear search value
+- While searching, change from card to list view the searched items should remain and not clear
+
+##  Pending Features
+- Test Cases
+- Pagination in Material Card and List
+- Filtering in Material Card and List
+- Sorting in Material Card and List
+- 
+
+> Note: 
+> + All commands are in par with Windows Operating System
+> + Run commands from root folder D:\Workspace\..\employee-management
+> + For Upload kindly use the excel template shared under D:\Workspace\..\employee-management\data
+
+---
 
 ##  Running the Web Application
 ####  Software Stack To Run the Executable
@@ -32,6 +74,8 @@ D:\Workspace\..\employee-management\executables>java -jar services/target/servic
 
 > **Web Application should have startup**, go to local running [Web Application](http://localhost:8080) on port 8080
 
+---
+
 ##  Development
 ####  Software Stack Used
 | No | Software                 | Version          |
@@ -57,16 +101,16 @@ C:\Program Files\MongoDB\Server\3.0\bin>mongod.exe --dbpath "c:\data\employees" 
 
 ####  Build Angular 4 - WebApp
 - Open command prompt, and execute
-'''
+```
 D:\Workspace\..\employee-management\webapp>ng build --env=prod
-'''
+```
 > **Angular WebApp built to production grade, files available under ..\webapp\dist**
   
 ####  Build Spring Boot - Services
 - Open command prompt, and execute
-'''
+```
 D:\Workspace\..\employee-management\services>mvn package spring-boot:repackage
-'''
+```
 > **Spring Boot Services built, files available under ..\services\target**
 
 ####  Start Up Web Application
@@ -76,35 +120,4 @@ D:\Workspace\..\employee-management\services\target>java -jar services/target/se
 ```
 > **Web Application should have startup**, go to local running [Web Application](http://localhost:8080) on port 8080
 
-
-
-        
-  
-- Fix card and list - click on full button
-- Layout of all pages
-- Search add/ edit/ delete clear search value
-- Clear option in search bar
-- Default Sort the data on first name
-- pagination on the card and list
-- filtering and sorting on the card and list
-- Directly accessing http://localhost:8080/card not working need to satrt from http://localhost:8080/
-- problem in delete many
-- List view when not employee data, remove place holder
-- Show loading mask
-- While searching, change from card to list view the searched items should remain and not clear
-- 
-  
-  
-  ------------------------------
-  
-  ## Angular project commands
-  ng new webapp
-  ng generate component card
-  ng generate component search --module=app.module
-  
-  ## 
-  
-  ## Git
-  $ git add .
-  $ git commit -m "New Features"
-  $ git push -u origin master
+---
